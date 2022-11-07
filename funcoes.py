@@ -176,3 +176,10 @@ def sorteia_questao_inedida(questoes, nivel, lista):
             else:
                 lista.append(sorteio)
                 return sorteio
+
+def valida_questoes(lista):
+    retorno = []
+    for dicionario in lista:
+        x = valida_questao(dicionario)
+        retorno.append(x)
+    return retorno
