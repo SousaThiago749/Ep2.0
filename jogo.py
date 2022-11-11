@@ -213,6 +213,10 @@ def main():
             acertos +=1
             print(colored('Você acertou! Seu prêmio atual é {}'.format(premio[acertos]), 'green'))
             i +=1
+          elif resposta == 'parar':
+            print('Você fez uma escolha boa, era melhor parar mesmo. Irá sair com {} reais de premiação! Parabéns!'.format(premio[acertos]))
+            parar = True
+            break
           else:
             if acertos == 0:
               print('Que pena! Você errou e vai sair sem nada :(' ) 
@@ -224,15 +228,13 @@ def main():
           # se a resposta for errada da print no que está em baixo
           #print('Que pena! Você errou e vai sair sem nada :(' ) colocar em amarelo
           #if resposta == 
-          
-          
-          
+
           parar = True
         else:
           i = i
 
       if acertos == 9:
-        print('PARABÉNS, você zerou o jogo e ganhou um milhão de reias!')
+        print('PARABÉNS, você zerou o jogo e ganhou o maior prêmio possível!')
         parar = True
         break
 main()
