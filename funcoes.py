@@ -1,19 +1,19 @@
 import random
 from random import choice
-
+from termcolor import colored
 def inicio():
-    print(' ===============================')
-    print('|                               |')
-    print('| Bem vindo ao Insper do Milhão |')
-    print('|                               |')
-    print(' ===== Design de Software ===== ')
+    print(colored(' ===============================', 'yellow'))
+    print(colored('|                               |', 'yellow'))
+    print(colored('| Bem vindo ao Insper do Milhão |', 'yellow'))
+    print(colored('|                               |', 'yellow'))
+    print(colored(' ===== Design de Software ===== ', 'yellow'))
 
     print('\n')
 
-    print('Olá! Você está na Fortuna DesSoft e terá a chance de enriquecer!')
-    nome = input('Qual é o seu nome?')
-    print('Ok {}, você tem direito a pular 3 vezes e 2 ajudas '.format(nome))
-    print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pular" e "parar')
+    print(colored('Olá! Você está na Fortuna DesSoft e terá a chance de enriquecer!','green'))
+    nome = input('Qual é o seu nome?' )
+    print(colored('Ok {}, você tem direito a pular 3 vezes e 2 ajudas '.format(nome),'cyan'))
+    print(colored('As opções de resposta são "A", "B", "C", "D", "ajuda", "pular" e "parar"','cyan'))
 
 def transforma_base(perguntas):
     categoria = 'nivel'

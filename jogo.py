@@ -1,6 +1,7 @@
 import math
 import random
 import funcoes
+from termcolor import colored
 #O programa funciona conforme o esperado, o jogo sempre apresenta para o jogador o estado atual do seu prêmio, 
 # é apresentada uma mensagem ao final de cada jogo indicando se o jogador ganhou ou perdeu
 #  e o jogador pode iniciar um novo jogo sem ter que executar o programa novamente.
@@ -206,13 +207,11 @@ def main():
             resposta = input('Qual alternativa? ')
             if resposta == questao['correta'].lower() or resposta == questao['correta']:
               acertos +=1
-              print('ACERTOU')
-              print('Você tem {} de premiação por enquanto'.format(premio[acertos]))
+              print(colored('Você acertou! Seu prêmio atual é {}'.format(premio[acertos]), 'green'))
               i +=1
           elif resposta == questao['correta'].lower() or resposta == questao['correta']:
             acertos +=1
-            print('ACERTOU')
-            print('Você tem {} de premiação por enquanto'.format(premio[acertos]))
+            print(colored('Você acertou! Seu prêmio atual é {}'.format(premio[acertos]), 'green'))
             i +=1
           else:
             if acertos == 0:
