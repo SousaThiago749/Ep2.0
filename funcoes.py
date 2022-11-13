@@ -10,9 +10,9 @@ def inicio():
 
     print('\n')
 
-    print(colored('Olá! Você está na Fortuna DesSoft e terá a chance de enriquecer!','green'))
+    print(colored("Olá! Você está na Fortuna DesSoft e terá a chance de enriquecer\n",'green'))
     nome = input('Qual é o seu nome?' )
-    print(colored('Ok {}, você tem direito a pular 3 vezes e 2 ajudas '.format(nome),'cyan'))
+    print(colored('\nOk {}, você tem direito a pular 3 vezes e 2 ajudas '.format(nome),'cyan'))
     print(colored('As opções de resposta são "A", "B", "C", "D", "ajuda", "pular" e "parar"','cyan'))
 
 def transforma_base(perguntas):
