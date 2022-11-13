@@ -238,13 +238,18 @@ def main():
           elif resposta == 'ajuda' and dicas != 0:
             print(colored(funcoes.gera_ajuda(questao), 'green'))
             print(funcoes.questao_para_texto(questao,i+1))
+            dicas -=1
             resposta = input('Qual alternativa? ')
+            if resposta == 'ajuda':
+              print(colored('Você já pediu ajuda nessa questão', 'red'))
+              print(funcoes.questao_para_texto(questao,i+1))
+              resposta = input('Qual alternativa? ')
             if resposta == questao['correta'].lower() or resposta == questao['correta']:
               acertos +=1
               print(colored('Você acertou! Seu prêmio atual é {}'.format(premio[acertos]), 'green'))
               i +=1
           elif resposta == 'ajuda' and dicas == 0:
-            print(colored('Você não tem mais pulos disponiveis', 'red'))
+            print(colored('Você não tem mais ajudas disponiveis', 'red'))
             print(funcoes.questao_para_texto(questao,i+1))
             resposta = input('Qual alternativa? ')
             if resposta == questao['correta'].lower() or resposta == questao['correta']:

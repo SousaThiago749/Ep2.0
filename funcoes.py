@@ -156,12 +156,10 @@ def gera_ajuda(questao):
         sorteio = random.choice(alternativas)
         dica.append(sorteio)
         i+=1
-      
-    print(dica)
 
     if numero == 1:
     
-      return 'DICA:\nOpções certamente erradas: {} | {}'.format(dica[0],dica[0])
+      return 'DICA:\nOpções certamente erradas: {}'.format(dica[0])
 
     else:
       
