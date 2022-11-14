@@ -382,6 +382,7 @@ def main():
                 parar = True
                 break
               else:
+                parar = False
                 break
                 
             else:
