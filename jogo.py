@@ -62,11 +62,61 @@ DADOS =  [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'opcoes': {'A': 'Miratdes', 'B': 'Python', 'C': 'Lua', 'D': 'C++'},
           'correta': 'A'},
 
-         {'titulo': 'Dentre os listados, qual destes esportes é menos praticado no Brasil?',
+         {'titulo': 'Qual o coletivo de cães?',
           'nivel': 'facil',
-          'opcoes': {'A': 'Natação', 'B': 'Vôlei', 'C': 'Ski Cross Country', 'D': 'Futebol'},
+          'opcoes': {'A': 'Matilha', 'B': 'Rebanho', 'C': 'Alcateia', 'D': 'Mandana'},
+          'correta': 'A'},
+
+          {'titulo': 'Qual é o triângulo que tem todos os lados diferentes?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Isóceles', 'B': 'Equilátero', 'C': 'Escaleno', 'D': 'Trapézio'},
           'correta': 'C'},
+
+          {'titulo': 'Qual é o atantônimo de "malograr"?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Perder', 'B': 'Fracassar', 'C': 'Conseguir', 'D': 'Desprezar'},
+          'correta': 'C'},
+
+          {'titulo': 'Em que país nasceu Carmem Miranda?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Portugal', 'B': 'Brasil', 'C': 'Espanha', 'D': 'Desprezar'},
+          'correta': 'A'},
+
+          {'titulo': 'Qual foi o último Presidente do período da ditadura militar no Brasil?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Emílio Medici', 'B': 'João Figueiredo', 'C': 'Ernesto Geisel', 'D': 'Arthur Antunes'},
+          'correta': 'B'},
+
+          {'titulo': 'O adjetivo "venoso" está relacionado a: ',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Vela', 'B': 'Vento', 'C': 'Vênia', 'D': 'Veia'},
+          'correta': 'D'},
+
+          {'titulo': 'Quantos noves existem de 0 a 100',
+          'nivel': 'facil',
+          'opcoes': {'A': '10', 'B': '11', 'C': '20', 'D': '21'},
+          'correta': 'C'},
+
+          {'titulo': 'O que é aspartame?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Um jogo', 'B': 'Um prato francês', 'C': 'programa de televisão', 'D': 'Adoçante artificial'},
+          'correta': 'D'},
+
+          {'titulo': 'A qual grupo de samba pertence o vocalista netinho?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Negritude JR.', 'B': 'Katinguelê', 'C': 'Só para contrariar', 'D': 'Exaltasamba'},
+          'correta': 'A'},
+
+         {'titulo': 'Quem compôs o Hino da Independência?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Dom Pedro I', 'B': 'Manuel Bandeira', 'C': 'Castro Alvez', 'D': 'Maciel Calebe'},
+          'correta': 'D'},
          
+         {'titulo': 'Qual bicho transmite Doença de Chagas?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Abelha', 'B': 'Barata', 'C': 'Pulga', 'D': 'Barbeiro'},
+          'correta': 'D'},
+
          {'titulo': 'Qual o resultado da operação 5 + 2 * 3?',
           'nivel': 'medio',
           'opcoes': {'A': '21', 'B': '11', 'C': '30', 'D': '10'},
@@ -116,6 +166,62 @@ DADOS =  [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'medio',
           'opcoes': {'A': 'Cristiano Ronaldo', 'B': 'Dwayne Johnson', 'C': 'Kim Kardashian', 'D': 'Lionel Messi'},
           'correta': 'A'},
+
+          {'titulo': 'Qual montanha se localiza entre a fronteira do Tibet com o Nepal?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Monte Everest', 'B': 'Monte Carlo', 'C': 'Monte Fuji', 'D': 'Monte Branco'},
+          'correta': 'A'},
+
+          {'titulo': 'Em que parte do corpo se encontra a epiglote?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Estômago', 'B': 'Pâncreas', 'C': 'Rim', 'D': 'Boca'},
+          'correta': 'D'},
+
+          {'titulo': 'Em que dia nasceu e em que dia foi registrado o Presidente Lula?',
+          'nivel': 'dificil',
+          'opcoes': {'A': '8 e 27 de outubro', 'B': '6 e 27 de outubro', 'C': '9 e 26 de outubro', 'D': '7 e 23 de outubro'},
+          'correta': 'B'},
+          #Essa pergunta deu 1 milhão de reais para uma pessoa na vida real
+
+          {'titulo': 'Qual bebida traz uma larva dentro da sua garrafa?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Vinho', 'B': 'Rum', 'C': 'Saquê', 'D': 'Mezcal'},
+          'correta': 'D'},
+
+          {'titulo': 'Em qual cidade nasceu o presidente Delfin Moreira?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Cristina', 'B': 'Belém', 'C': 'Cabo Frio', 'D': 'Cuiabá'},
+          'correta': 'A'},
+
+          {'titulo': 'Como se chama um recife de coral formado em uma laguna?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Arqupélago', 'B': 'Mar Pequeno', 'C': 'Largo', 'D': 'Atol'},
+          'correta': 'D'},
+
+          {'titulo': 'Em qual cidade se localiza a "Cidade Proibida?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Pequim', 'B': 'Belém', 'C': 'Tóquio', 'D': 'Moscou'},
+          'correta': 'A'},
+
+          {'titulo': 'O cleptomaníaco tem como principal característica:',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'mania de roubar', 'B': 'medo de escuro', 'C': 'mania de piscar', 'D': 'mania de perseguição'},
+          'correta': 'A'},
+
+          {'titulo': 'Que ramo da odontologia estuda os defeitos da dentição?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Ortodontia', 'B': 'Ortogradismo', 'C': 'Ortodoxia', 'D': 'Ortocinese'},
+          'correta': 'A'},
+
+          {'titulo': 'Que nome se dá à purificação por meio da água?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Abolição', 'B': 'Abnegação', 'C': 'Ablução', 'D': 'Abrução'},
+          'correta': 'C'},
+
+         {'titulo': 'Qual fruto é conhecido no Norte e Nordeste como "jerimum"?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Caju', 'B': 'Abóbora', 'C': 'Chuchu', 'D': 'Coco'},
+          'correta': 'B'},
 
          {'titulo': 'A reprodução dos seres vivos é um processo biológico através do qual os organismos geram descendência. Qual desta não é uma forma de reprodução assexuada?',
           'nivel': 'dificil',
