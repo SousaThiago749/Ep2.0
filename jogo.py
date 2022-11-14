@@ -275,9 +275,10 @@ DADOS =  [{'titulo': 'Qual o resultado da operação 57 + 32?',
         ]
 
 def main():
+  parar = False
+  while parar == False:
     funcoes.inicio()
     DADOS_NORMALIZADOS = funcoes.transforma_base(DADOS)
-    parar = False
     premio = [0,1000,5000,10000,30000,50000,100000,300000,500000,1000000]
     enter = '\nAperte ENTER para continuar...'
     
@@ -294,37 +295,86 @@ def main():
     pular = 3
     dicas = 2
     questoes = []
+    jogo = True 
 
-
-    while parar == False:
-      while i < len(dificuldades):
-        questao = funcoes.sorteia_questao(DADOS_NORMALIZADOS,dificuldades[i])
-        if funcoes.valida_questao(questao) == {} and questao not in questoes:
-          questoes.append(questao)
+    while jogo:
+      questao = funcoes.sorteia_questao(DADOS_NORMALIZADOS,dificuldades[i])
+      if funcoes.valida_questao(questao) == {} and questao not in questoes:
+        questoes.append(questao)
+        print(funcoes.questao_para_texto(questao,i+1))
+        resposta = input('Qual alternativa? ')
+        resposta = resposta.lower()
+        if resposta == 'pular' and pular != 0:
+          pular -= 1
+          i = i
+        elif resposta == 'pular' and pular == 0:
+          i = i
+          print('Você não tem mais pulos disponiveis')
           print(funcoes.questao_para_texto(questao,i+1))
           resposta = input('Qual alternativa? ')
-          resposta = resposta.lower()
-          if resposta == 'pular' and pular != 0:
-            pular -= 1
-            i = i
-          elif resposta == 'pular' and pular == 0:
-            i = i
-            print('Você não tem mais pulos disponiveis')
-            print(funcoes.questao_para_texto(questao,i+1))
-            resposta = input('Qual alternativa? ')
-            if resposta == questao['correta'].lower() or resposta == questao['correta']:
-              acertos +=1
-              print(colored('Você acertou! Seu prêmio atual é {}'.format(premio[acertos]), 'green'))
-              i +=1
-          elif resposta == questao['correta'].lower() or resposta == questao['correta']:
+          if resposta == questao['correta'].lower() or resposta == questao['correta']:
             acertos +=1
             print(colored('Você acertou! Seu prêmio atual é {}'.format(premio[acertos]), 'green'))
             i +=1
-          elif resposta == 'parar':
-            print('Você fez uma escolha boa, era melhor parar mesmo. Irá sair com {} reais de premiação! Parabéns!'.format(premio[acertos]))
-            parar = True
-            break
-          elif resposta == 'a' or resposta == 'b' or resposta == 'c' or resposta == 'd' : 
+        elif resposta == questao['correta'].lower() or resposta == questao['correta']:
+          acertos +=1
+          print(colored('Você acertou! Seu prêmio atual é {}'.format(premio[acertos]), 'green'))
+          i +=1
+        elif resposta == 'parar':
+          print('Você fez uma escolha boa, era melhor parar mesmo. Irá sair com {} reais de premiação! Parabéns!'.format(premio[acertos]))
+          parar = True
+          break
+        elif resposta == 'a' or resposta == 'b' or resposta == 'c' or resposta == 'd' : 
+          if acertos == 0:
+            print(colored('Que pena! Você errou e vai sair sem nada :(', 'yellow' )) 
+            res = input('\nDeseja jogar novamente?(y/n)')
+            if res == 'n':
+              parar = True
+              break
+            else:
+              parar = False
+              break
+          else:
+            print('Que pena! Você errou, mas irá sair com {} reais!'.format(premio[acertos]))
+            res = input('\nDeseja jogar novamente?(y/n)')
+            if res == 'n':
+              parar = True
+              break
+            else:
+              parar = False
+              break
+              
+            
+        elif resposta == 'ajuda' and dicas != 0:
+          print(colored(funcoes.gera_ajuda(questao), 'green'))
+          print(funcoes.questao_para_texto(questao,i+1))
+          dicas -=1
+          resposta = input('Qual alternativa? ')
+          if resposta == 'ajuda':
+            print(colored('Você já pediu ajuda nessa questão', 'red'))
+            print(funcoes.questao_para_texto(questao,i+1))
+            resposta = input('Qual alternativa? ')
+          if resposta == questao['correta'].lower() or resposta == questao['correta']:
+            acertos +=1
+            print(colored('Você acertou! Seu prêmio atual é {}'.format(premio[acertos]), 'green'))
+            i +=1
+        elif resposta == 'ajuda' and dicas == 0:
+          print(colored('Você não tem mais ajudas disponiveis', 'red'))
+          print(funcoes.questao_para_texto(questao,i+1))
+          resposta = input('Qual alternativa? ')
+          if resposta == questao['correta'].lower() or resposta == questao['correta']:
+            acertos +=1
+            print(colored('Você acertou! Seu prêmio atual é {}'.format(premio[acertos]), 'green'))
+            i +=1
+        else:
+          print(colored('Opção inválida', 'red'))
+          print(funcoes.questao_para_texto(questao,i+1))
+          resposta = input('Qual alternativa? ')
+          if resposta == questao['correta'].lower() or resposta == questao['correta']:
+            acertos +=1
+            print(colored('Você acertou! Seu prêmio atual é {}'.format(premio[acertos]), 'green'))
+            i +=1
+          else:
             if acertos == 0:
               print(colored('Que pena! Você errou e vai sair sem nada :(', 'yellow' )) 
               res = input('\nDeseja jogar novamente?(y/n)')
@@ -333,6 +383,7 @@ def main():
                 break
               else:
                 break
+                
             else:
               print('Que pena! Você errou, mas irá sair com {} reais!'.format(premio[acertos]))
               res = input('\nDeseja jogar novamente?(y/n)')
@@ -340,47 +391,21 @@ def main():
                 parar = True
                 break
               else:
+                parar = False
                 break
-          elif resposta == 'ajuda' and dicas != 0:
-            print(colored(funcoes.gera_ajuda(questao), 'green'))
-            print(funcoes.questao_para_texto(questao,i+1))
-            dicas -=1
-            resposta = input('Qual alternativa? ')
-            if resposta == 'ajuda':
-              print(colored('Você já pediu ajuda nessa questão', 'red'))
-              print(funcoes.questao_para_texto(questao,i+1))
-              resposta = input('Qual alternativa? ')
-            if resposta == questao['correta'].lower() or resposta == questao['correta']:
-              acertos +=1
-              print(colored('Você acertou! Seu prêmio atual é {}'.format(premio[acertos]), 'green'))
-              i +=1
-          elif resposta == 'ajuda' and dicas == 0:
-            print(colored('Você não tem mais ajudas disponiveis', 'red'))
-            print(funcoes.questao_para_texto(questao,i+1))
-            resposta = input('Qual alternativa? ')
-            if resposta == questao['correta'].lower() or resposta == questao['correta']:
-              acertos +=1
-              print(colored('Você acertou! Seu prêmio atual é {}'.format(premio[acertos]), 'green'))
-              i +=1
-          else:
-            print(colored('Opção inválida', 'red'))
-            print(funcoes.questao_para_texto(questao,i+1))
-            resposta = input('Qual alternativa? ')
-            if resposta == questao['correta'].lower() or resposta == questao['correta']:
-              acertos +=1
-              print(colored('Você acertou! Seu prêmio atual é {}'.format(premio[acertos]), 'green'))
-              i +=1
-            
-          # se a resposta for errada da print no que está em baixo
-          #print('Que pena! Você errou e vai sair sem nada :(' ) colocar em amarelo
-          #if resposta == 
+                
+              
+          
+        # se a resposta for errada da print no que está em baixo
+        #print('Que pena! Você errou e vai sair sem nada :(' ) colocar em amarelo
+        #if resposta == 
 
-          parar = True
-        else:
-          i = i
-
-      if acertos == 9:
-        print('PARABÉNS, você zerou o jogo e ganhou o maior prêmio possível!')
         parar = True
-        break
+      else:
+        i = i
+
+    if acertos == 9:
+      print('PARABÉNS, você zerou o jogo e ganhou o maior prêmio possível!')
+      parar = True
+      break
 main()
